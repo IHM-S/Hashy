@@ -24,6 +24,13 @@ struct hash_map {
     size_t num_hash_item;
 };
 
+/*
+ * Create a new hash map
+ * @param hash, the hash function with calculate hash value the key
+ * @param cmp, the comparasion function which used to compare the map keys
+ * @param key_destruct, the function which used by map when it needs to destroy the key
+ * @param value_destruct, the function which used by map when it needs to destroy the value
+ */
 struct hash_map* hash_map_new(size_t (*hash)(void*),
                               int (*cmp)(void*, void*),
                               void (*key_destruct)(void*),
